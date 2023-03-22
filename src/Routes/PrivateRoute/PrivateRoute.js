@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const PrivateRoute = ({children}) => {
-    const {user,loading}=useContext(AuthContext);
+    const {user,loading}=useContext(AuthContext); //we get user from auth context
     const location=useLocation();
 
     if(loading){

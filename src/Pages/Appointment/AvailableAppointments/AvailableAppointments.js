@@ -1,17 +1,32 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading/Loading.cjs';
 import BookingModals from '../BookingModals/BookingModals';
 import AppointmentOption from './AppointmentOption';
 
 const AvailableAppointments = ({ selectedDate }) => {
-    const [appointmentOptions, setAppointmentOptions] = useState([]);
+    // const [appointmentOptions, setAppointmentOptions] = useState([]);
     const [treatment, setTreatment] = useState(null);//appointment name and slots
-    useEffect(() => {
-        fetch('appointmentOptions.json')
-            .then(res => res.json())
-            .then(data => setAppointmentOptions(data));
 
-    }, [])
+    const date=format(selectedDate,'PP');
+
+    const {data:appointmentOptions=[],refetch, isLoading}=useQuery({//we dont want to use isLoading thats why we use =[]
+
+        queryKey:['appointmentOptions',date],
+        queryFn:()=>fetch(`http://localhost:5000/appointmentOptions?date=${date}`)
+        .then(res => res.json())
+    });
+
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/appointmentOptions')
+    //         .then(res => res.json())
+    //         .then(data => setAppointmentOptions(data));
+
+    // }, [])
+    if(isLoading){
+        <Loading></Loading>
+    }
     return (
         <section className='mt-16'>
             <p className='text-secondary text-2xl font-bold text-center'>You have selected :{format(selectedDate, 'PP')}</p>
@@ -30,6 +45,7 @@ const AvailableAppointments = ({ selectedDate }) => {
                     treatment={treatment}
                     selectedDate={selectedDate}
                     setTreatment={setTreatment}
+                    refetch={refetch}
                 ></BookingModals>
             }
         </section>
