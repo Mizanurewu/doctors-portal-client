@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
-import Loading from '../../Shared/Loading/Loading.cjs';
+import Loading from '../../Shared/Loading/Loading.js';
 import BookingModals from '../BookingModals/BookingModals';
 import AppointmentOption from './AppointmentOption';
 
