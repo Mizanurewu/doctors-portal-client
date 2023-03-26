@@ -13,7 +13,11 @@ const MyAppointment = () => {
         //     console.log(data)
         //     return data;
         // }
-        queryFn:()=>fetch(url)
+        queryFn:()=>fetch(url,{
+            headers:{
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
         .then(res => res.json())
     })
 
