@@ -98,6 +98,7 @@ const SignUp = () => {
                 <div className="divider">OR</div>
                 <button className='btn btn-outline uppercase w-full'>Continue with Google</button>
             </div>
+            
         </div>
     );
 };

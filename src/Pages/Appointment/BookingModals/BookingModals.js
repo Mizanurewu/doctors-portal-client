@@ -5,7 +5,7 @@ import { Form } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BookingModals = ({ treatment, selectedDate, setTreatment,refetch }) => {
-    const { name: treatmentName, slots } = treatment;
+    const { name: treatmentName, slots, price} = treatment;
     const { user } = useContext(AuthContext);
     const date = format(selectedDate, 'PP');
     const handleBooking = (event) => {
@@ -21,7 +21,8 @@ const BookingModals = ({ treatment, selectedDate, setTreatment,refetch }) => {
             patient: name,
             slot,
             email,
-            phone
+            phone,
+            price
         }
 
         fetch('http://localhost:5000/bookings', {

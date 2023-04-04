@@ -8,6 +8,7 @@ const AllUsers = () => {
         queryFn: () => fetch('http://localhost:5000/users')
             .then(res => res.json())
         // .then(data=>console.log(data))
+        
     })
     const handleMakeAdmin = (id) => {
         fetch(`http://localhost:5000/users/admin/${id}`, {
@@ -27,6 +28,7 @@ const AllUsers = () => {
             })
 
     }
+    
     return (
         <div>
             <h4>all users</h4>
@@ -57,8 +59,12 @@ const AllUsers = () => {
 
                         </tbody>
                     </table>
+                    
+                
                 </div>
             }
+        {/* //write a modal for react */}
+
             
         </div>
     );

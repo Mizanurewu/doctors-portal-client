@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useQuery } from 'react-query';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const MyAppointment = () => {
     const { user } = useContext(AuthContext);
@@ -13,12 +14,12 @@ const MyAppointment = () => {
         //     console.log(data)
         //     return data;
         // }
-        queryFn:()=>fetch(url,{
-            headers:{
+        queryFn: () => fetch(url, {
+            headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
             }
         })
-        .then(res => res.json())
+            .then(res => res.json())
     })
 
     return (
@@ -33,18 +34,32 @@ const MyAppointment = () => {
                             <th>Name</th>
                             <th>Treatment</th>
                             <th>Date</th>
-                            <th>time</th>
+                            <th>Time</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            bookings.map((booking, i)=> 
+                            bookings?.map((booking, i) =>
                                 <tr key={booking._id}>
-                                    <th>{i+1}</th>
+                                    <th>{i + 1}</th>
                                     <td>{booking.patient}</td>
                                     <td>{booking.treatment}</td>
                                     <td>{booking.appointmentDate}</td>
                                     <td>{booking.slot}</td>
+                                    <td>
+                                        {
+                                            booking.price && !booking.paid && <Link
+                                                to={`/dashboard/payment/${booking._id}`}>
+                                                <button
+                                                    className='btn btn-primary'
+                                                >Pay</button>
+                                            </Link>
+                                        }
+                                        {
+                                            booking.price && booking.paid && <span className='text-primary'>Paid</span>
+                                        }
+                                    </td>
                                 </tr>
                             )
                         }

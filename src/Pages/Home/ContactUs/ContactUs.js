@@ -3,7 +3,7 @@ import appointment from '../../../assets/images/appointment.png';
 
 const ContactUs = () => {
     return (
-        <div class="grid justify-items-center " style={{ background: `url(${appointment})` }}>
+        <div className="grid justify-items-center " style={{ background: `url(${appointment})` }}>
             <div className='m-20' >
                 <div className='mb-8 content-center '>
                     <h2 className='text-2xl font-bold text-primary text-center'>Contact Us</h2>

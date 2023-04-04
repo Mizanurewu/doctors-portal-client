@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Service = ({service}) => {
-    const {id,name,description,img}=service;
+    const {name,description,img}=service;
     return (
         <div className="card bg-base-100 shadow-2xl">
             <figure className="px-10 pt-10">
