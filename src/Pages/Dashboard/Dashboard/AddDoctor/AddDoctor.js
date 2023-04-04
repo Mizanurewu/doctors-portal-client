@@ -35,7 +35,7 @@ const AddDoctor = () => {
                         image: imgData.data.url
 
                     }
-                    fetch('http://localhost:5000/doctors', {
+                    fetch('https://doctors-portal-server-git-main-mizanurewu-gmailcom.vercel.app/doctors', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const AddDoctor = () => {
 
     const { data: specialties, isLoading } = useQuery({
         queryKey: ['specialty'],
-        queryFn: () => fetch('http://localhost:5000/appointmentSpecialty')
+        queryFn: () => fetch('https://doctors-portal-server-git-main-mizanurewu-gmailcom.vercel.app/appointmentSpecialty')
             .then(res => res.json())
 
     })

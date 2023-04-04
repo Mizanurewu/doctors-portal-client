@@ -41,8 +41,8 @@ const SignUp = () => {
             });
     }
     const saveUser = (name, email) => {
-        const user = { name, email };
-        fetch('http://localhost:5000/users', {
+        const user = { name, email, role:'admin' };//modified so that all user can have access on admin role
+        fetch('https://doctors-portal-server-git-main-mizanurewu-gmailcom.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -14,6 +14,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ManageDoctors from "../../Pages/Dashboard/Dashboard/ManageDoctors/ManageDoctors";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
 import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
+import About from "../../Pages/Dashboard/Dashboard/About/About";
 
 const router=createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router=createBrowserRouter([
             {
                 path:'/appointment',
                 element:<Appointment></Appointment>
+            },
+            {
+                path:'/about',
+                element:<About></About>
             }
         ]
     },
@@ -63,7 +68,7 @@ const router=createBrowserRouter([
             {
                 path:'/dashboard/payment/:id',
                 element:<AdminRoute><Payment></Payment></AdminRoute>,
-                loader:({params})=> fetch(`http://localhost:5000/bookings/${params.id}`)
+                loader:({params})=> fetch(`https://doctors-portal-server-git-main-mizanurewu-gmailcom.vercel.app/bookings/${params.id}`)
             }
         ]
     }

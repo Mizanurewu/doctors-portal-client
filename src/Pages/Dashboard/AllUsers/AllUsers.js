@@ -5,13 +5,13 @@ import { useQuery } from 'react-query';
 const AllUsers = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch('http://localhost:5000/users')
+        queryFn: () => fetch('https://doctors-portal-server-git-main-mizanurewu-gmailcom.vercel.app/users')
             .then(res => res.json())
         // .then(data=>console.log(data))
         
     })
     const handleMakeAdmin = (id) => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://doctors-portal-server-git-main-mizanurewu-gmailcom.vercel.app/users/admin/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

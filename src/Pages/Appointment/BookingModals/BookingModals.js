@@ -25,7 +25,7 @@ const BookingModals = ({ treatment, selectedDate, setTreatment,refetch }) => {
             price
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://doctors-portal-server-git-main-mizanurewu-gmailcom.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
