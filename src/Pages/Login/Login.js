@@ -3,11 +3,13 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useToken from '../../hooks/useToken';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
+    const googleProvider=new GoogleAuthProvider();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [loginError, setLoginError] = useState('');
-    const { signIn } = useContext(AuthContext);
+    const { signIn, providerLogin } = useContext(AuthContext);
     const [loginUserEmail,setLoginUserEmail]=useState('');
     const [token]=useToken(loginUserEmail);
 
@@ -35,6 +37,14 @@ const Login = () => {
                 setLoginError(error.message);
             });
     }
+    const handleGoogleSignIn=()=>{
+        providerLogin(googleProvider)
+        .then(result=>{
+          const user=result.user;
+          console.log(user);
+        })
+        .catch(error=>console.error(error));
+      }
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div className='w-96'>
@@ -64,8 +74,8 @@ const Login = () => {
                     </div>
                 </form>
                 <p>New to Doctors Portal? <Link className='text-secondary' to='/signup'>Create a new account</Link></p>
-                <div className="divider">OR</div>
-                <button className='btn btn-outline uppercase w-full'>Continue with Google</button>
+                {/* <div className="divider">OR</div> */}
+                {/* <button  className='btn btn-outline uppercase w-full'>Continue with Google</button> */}
             </div>
         </div>
     );

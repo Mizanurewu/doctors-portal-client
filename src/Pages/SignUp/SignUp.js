@@ -95,8 +95,8 @@ const SignUp = () => {
                     {signUpError && <p className='text-red-500'>{signUpError}</p>}
                 </form>
                 <p>Already have an account? <Link className='text-secondary' to='/login'>Login</Link></p>
-                <div className="divider">OR</div>
-                <button className='btn btn-outline uppercase w-full'>Continue with Google</button>
+                {/* <div className="divider">OR</div>
+                <button className='btn btn-outline uppercase w-full'>Continue with Google</button> */}
             </div>
             
         </div>
