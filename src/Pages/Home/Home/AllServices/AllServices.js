@@ -10,19 +10,19 @@ const AllServices = () => {
     const servicesData = [{
         id: 1,
         name: 'Consult with a Doctor',
-        description: 'Fluoride is a naturally occurring mineral that helps build strong teeth and prevent cavities',
+        description: 'A doctor consultant, also known as a medical consultant, is a highly trained and experienced physician who provides specialized expertise and advice to other healthcare professionals, organizations, or individuals. These consultants typically possess extensive knowledge and expertise in a specific medical field or area of practice.',
         img: doc
     },
     {
         id: 2,
         name: 'Consult with a Engineer',
-        description: 'Treatments for tooth decay  A dentist can prescribe fluoride treatments like mouthwash or varnish to reverse early tooth decay',
+        description: 'An engineering consultant is a professional who provides specialized expertise and advice in various engineering fields. They possess in-depth knowledge and experience in specific areas of engineering and offer their services to individuals, companies, or organizations that require technical guidance or support.',
         img: eng
     },
     {
         id: 3,
         name: 'Consult with a Lawyer',
-        description: 'The best way to whiten teeth by removing stains is whitening toothpaste and an electric toothbrush.',
+        description: 'A lawyer consultant, also known as a legal consultant, is a professional who provides specialized legal expertise and advice to individuals, businesses, or organizations. These consultants possess a deep understanding of the law and apply their knowledge to assist clients with legal matters and decision-making processes.',
         img: loy
     }
     ]
@@ -44,8 +44,10 @@ const AllServices = () => {
                 <div className="hero-content flex-col lg:flex-row">
                     {/* <img src={treatment} className="max-w-md rounded-lg shadow-2xl" alt='treatment' /> */}
                     <div className='max-w-md md:pt-16'>
-                        <h1 className="text-5xl font-bold">Exceptional Dental Care, on Your Terms</h1>
-                        <p className="py-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsumis that it has a more-or-less normal distribution of letters,as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page</p>
+                        <h1 className="text-5xl font-bold">Why We Are The Best !!!</h1>
+                        <p className="py-6">Our team consists of highly skilled and experienced consultants who bring deep expertise and knowledge to the table. We have a track record of delivering successful solutions across diverse industries.<br></br>
+
+We prioritize our clients and their unique needs. By understanding their challenges and goals, we provide tailored and effective solutions that drive sustainable growth and long-term success.</p>
                         <PrimaryButton><Link to='/appointment'>Get Started</Link></PrimaryButton>
                     </div>
                 </div>
