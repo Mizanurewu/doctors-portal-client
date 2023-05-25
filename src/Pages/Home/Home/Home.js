@@ -5,13 +5,17 @@ import InfoCards from '../InfoCards/InfoCards';
 import MakeAppointment from '../MakeAppointment/MakeAppointment';
 import Services from '../Services/Services';
 import Testimonial from '../Testimonial/Testimonial';
+import AllServices from './AllServices/AllServices';
 
 const Home = () => {
     return (
         <div className='mx-5'>
             <Banner></Banner>
+           
+            <AllServices></AllServices>
             <InfoCards></InfoCards>
-            <Services></Services>
+            {/* <Services></Services> */}
+            
             <MakeAppointment></MakeAppointment>
             <Testimonial></Testimonial>
             <ContactUs></ContactUs>

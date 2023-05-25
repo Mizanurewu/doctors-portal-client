@@ -13,8 +13,9 @@ const Navbar = () => {
     }
     const menuItems = <React.Fragment>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/appointment'>Appointment</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/appointment'> Appointment</Link></li>
+        <li><Link to='#'> Career</Link></li>
+        <li><Link to='/about'>About US</Link></li>
 
         {
             user?.uid ?
@@ -28,7 +29,7 @@ const Navbar = () => {
         }
     </React.Fragment>
     return (
-        <div className="navbar bg-base-100 justify-between">
+        <div className="navbar bg-[#02252A] text-white justify-between">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,11 +40,10 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Doctors Portal</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">WeConsultant</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-
                     {menuItems}
                 </ul>
             </div>
