@@ -30,7 +30,7 @@ const AllServices = () => {
         <div className='my-16'>
             <div>
                 
-                <h2 className='text-4xl text-center'>Services We Provide</h2>
+                <h2 className='text-6xl font-medium   '>Our {<span className='text-[#FF5900]'> Services</span>} </h2>
             </div>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-8 justify-center'>
                 {
@@ -40,15 +40,16 @@ const AllServices = () => {
                     ></AllService>)
                 }
             </div>
-            <div className="hero pt-16">
-                <div className="hero-content flex-col lg:flex-row">
+            <div className=" pt-16">
+            <h1 className="text-5xl font-bold text-right">What Make Us  <span className='text-orange-600'>Different !!!</span></h1>
+                <div className=" hero-content flex-col lg:flex-row ">
                     {/* <img src={treatment} className="max-w-md rounded-lg shadow-2xl" alt='treatment' /> */}
-                    <div className='max-w-md md:pt-16'>
-                        <h1 className="text-5xl font-bold">Why We Are The Best !!!</h1>
+                    <div className='max-w-md md:pt-8 '>
+                        
                         <p className="py-6">Our team consists of highly skilled and experienced consultants who bring deep expertise and knowledge to the table. We have a track record of delivering successful solutions across diverse industries.<br></br>
 
-We prioritize our clients and their unique needs. By understanding their challenges and goals, we provide tailored and effective solutions that drive sustainable growth and long-term success.</p>
-                        <PrimaryButton><Link to='/appointment'>Get Started</Link></PrimaryButton>
+                                            We prioritize our clients and their unique needs. By understanding their challenges and goals, we provide tailored and effective solutions that drive sustainable growth and long-term success.</p>
+                        
                     </div>
                 </div>
             </div>
